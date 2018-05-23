@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hPM-tW-KpG">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root Page View Controller-->
+        <scene sceneID="zPh-Fw-CXi">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hPM-tW-KpG" customClass="RootPageViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUJ-n3-zrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="-582"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YeQ-IB-Jpp">
+            <objects>
+                <viewController storyboardIdentifier="left" id="0B5-UI-8Ln" customClass="ViewController" customModule="Calculator" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OE9-64-KcV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="iuK-0F-ou2">
+                                <rect key="frame" x="13" y="297" width="350" height="500"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-fq-nMk">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F19-Cc-pnY">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="Cbg-bj-CDG"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="cyH-Hx-iGu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ic3-8Z-0ld">
+                                                <rect key="frame" x="88" y="0.0" width="262" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="zZx-9r-cdf"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="OnC-oQ-qC7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="F19-Cc-pnY" secondAttribute="trailing" constant="262.32999999999998" id="7a5-f6-V4P"/>
+                                            <constraint firstItem="F19-Cc-pnY" firstAttribute="leading" secondItem="jMp-fq-nMk" secondAttribute="leading" id="8zO-Ee-xKC"/>
+                                            <constraint firstAttribute="bottom" secondItem="ic3-8Z-0ld" secondAttribute="bottom" id="BW4-vD-ZT3"/>
+                                            <constraint firstItem="ic3-8Z-0ld" firstAttribute="top" secondItem="jMp-fq-nMk" secondAttribute="top" id="CR5-wp-t1T"/>
+                                            <constraint firstAttribute="width" constant="350" id="CoD-tb-qNX"/>
+                                            <constraint firstItem="F19-Cc-pnY" firstAttribute="top" secondItem="jMp-fq-nMk" secondAttribute="top" id="LKa-eM-2z8"/>
+                                            <constraint firstAttribute="trailing" secondItem="ic3-8Z-0ld" secondAttribute="trailing" id="Yms-gz-bX0"/>
+                                            <constraint firstAttribute="bottom" secondItem="F19-Cc-pnY" secondAttribute="bottom" id="bh4-ac-C2w"/>
+                                            <constraint firstAttribute="height" constant="80" id="d3I-vE-nwy"/>
+                                            <constraint firstItem="ic3-8Z-0ld" firstAttribute="leading" secondItem="jMp-fq-nMk" secondAttribute="leading" constant="87.670000000000002" id="jTR-lU-pMh"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VwN-GR-FiM">
+                                        <rect key="frame" x="0.0" y="105" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If6-gp-9Uh">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="×">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" red="0.85297578569999999" green="0.22109383339999999" blue="0.19600364570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="Fbf-sR-wpv"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="LHd-DF-7pG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ8-2p-IZs">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="MMX-pG-kJ7"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="BIc-IE-R4P"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZe-7F-mjA">
+                                                <rect key="frame" x="175" y="0.0" width="87.666666666666686" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="cdT-HL-SrL"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="yZC-Vk-Ar1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo5-Im-jc4">
+                                                <rect key="frame" x="262.66666666666669" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="phP-cf-40A"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="kgU-UA-v5c"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="Klj-Ml-YS1"/>
+                                            <constraint firstAttribute="height" constant="80" id="jK6-iQ-tCk"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Vx-61-j85">
+                                        <rect key="frame" x="0.0" y="210" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcZ-Wu-k1g">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="−">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="5nM-Ng-4ri"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="bFE-N1-aOy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-yL-HnG">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="JjB-1Z-TG4"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="7pe-cc-4r4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR1-bD-yBt">
+                                                <rect key="frame" x="175" y="0.0" width="87.666666666666686" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="ttn-nq-rGy"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="MPD-P1-1Gg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN2-lH-0L0">
+                                                <rect key="frame" x="262.66666666666669" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="VKH-sQ-BHp"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="0nO-uN-onw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="DZ7-HJ-EwP"/>
+                                            <constraint firstAttribute="height" constant="80" id="eWi-4M-fXx"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2aa-jB-hrX">
+                                        <rect key="frame" x="0.0" y="315" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fui-YC-Ug1">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="1ab-Xr-xH7"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="Yhd-HI-BkE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbY-K8-IOf">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="vvm-lA-Mrc"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="oKB-06-ukj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwp-db-Yy7">
+                                                <rect key="frame" x="175" y="0.0" width="87.666666666666686" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="KEX-7z-CDp"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="gIr-dP-SYT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-oo-dSe">
+                                                <rect key="frame" x="262.66666666666669" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="rda-TX-bvg"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="A0b-9o-16n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="X1b-3U-ftT"/>
+                                            <constraint firstAttribute="width" constant="350" id="a3L-3S-y2V"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSF-lr-NTo">
+                                        <rect key="frame" x="0.0" y="420" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLp-Lf-lvl">
+                                                <rect key="frame" x="0.0" y="0.0" width="87" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.329999999999998" id="kSB-Gs-Q4I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="Rkm-q9-xdP"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="Ckx-CH-S1m"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wU4-h0-iqa">
+                                                <rect key="frame" x="87" y="0.0" width="132" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="oB6-Sw-I9e"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="4oS-ko-1NX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBH-Az-X9I">
+                                                <rect key="frame" x="219" y="0.0" width="131" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87.329999999999998" id="l99-bQ-Gco"/>
+                                                    <constraint firstAttribute="width" constant="131" id="tUa-VT-vUY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="794-1e-XZL"/>
+                                                    <action selector="tap:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="Lq7-fm-w0p"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="1qW-nw-hVh"/>
+                                            <constraint firstAttribute="width" constant="350" id="eAW-Va-bjf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="qjJ-ih-7pu"/>
+                                    <constraint firstAttribute="height" constant="500" id="vI6-Dt-VA6"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdO-dt-xAD">
+                                <rect key="frame" x="37" y="147" width="301" height="100"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="72"/>
+                                <color key="textColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtM-k0-MGv">
+                                <rect key="frame" x="309" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="right.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="tIU-lf-UIZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGU-QI-uiA">
+                                <rect key="frame" x="16" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="left.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="lSo-Hi-jvO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLp-ki-PgE">
+                                <rect key="frame" x="162" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="both.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="0B5-UI-8Ln" eventType="touchUpInside" id="lzm-YI-0B9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="iuK-0F-ou2" secondAttribute="bottom" constant="15" id="DJm-k2-hOa"/>
+                            <constraint firstItem="VdO-dt-xAD" firstAttribute="centerX" secondItem="iuK-0F-ou2" secondAttribute="centerX" id="QeV-SE-vbt"/>
+                            <constraint firstItem="VdO-dt-xAD" firstAttribute="top" secondItem="bq8-eS-AP0" secondAttribute="top" constant="103" id="VAT-mm-QiI"/>
+                            <constraint firstItem="iuK-0F-ou2" firstAttribute="top" secondItem="VdO-dt-xAD" secondAttribute="bottom" constant="50" id="b5p-ag-B52"/>
+                            <constraint firstItem="iuK-0F-ou2" firstAttribute="centerX" secondItem="OE9-64-KcV" secondAttribute="centerX" id="eO0-TI-Q1C"/>
+                            <constraint firstItem="VdO-dt-xAD" firstAttribute="leading" secondItem="bq8-eS-AP0" secondAttribute="leading" constant="37" id="w4J-33-ZzM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bq8-eS-AP0"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="VdO-dt-xAD" id="jeY-uP-hg6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3D-2j-hJZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fOl-Zc-EVt">
+            <objects>
+                <viewController storyboardIdentifier="both" id="ShV-Ok-XVT" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RpP-in-8jG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2zq-Kw-jae">
+                                <rect key="frame" x="12" y="297" width="350" height="500"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y1g-kJ-j3F">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="led-Nb-jSg">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="L6t-XK-xmt"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="q8R-mG-68V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-D9-wVe">
+                                                <rect key="frame" x="116.66666666666666" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="HUd-vE-Nxq"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="Z8j-cB-eMD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raJ-SF-UHc">
+                                                <rect key="frame" x="233.33333333333334" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="43N-je-hLY"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="9ab-jz-4Ca"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="1sz-8Y-1EQ"/>
+                                            <constraint firstAttribute="height" constant="80" id="TZ0-4r-d9n"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WT9-d8-qgW">
+                                        <rect key="frame" x="0.0" y="105" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-1B-jyo">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="QMm-mu-40J"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="Uiv-Cq-KpA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-j5-tuS">
+                                                <rect key="frame" x="116.66666666666666" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="4zP-md-sMN"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="1tV-0a-Er8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFq-nj-T0k">
+                                                <rect key="frame" x="233.33333333333334" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="s6S-Nh-fpo"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="laG-pl-dcf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="1l0-U3-bjE"/>
+                                            <constraint firstAttribute="height" constant="80" id="hZ1-nu-Jdq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kh3-Pc-tYw">
+                                        <rect key="frame" x="0.0" y="210" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbA-63-Y78">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="SzA-bm-R4a"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="D6a-O4-3zc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwz-Wd-o4E">
+                                                <rect key="frame" x="116.66666666666666" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="mkN-nl-bbY"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="SK5-kG-QcK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-rI-ZDG">
+                                                <rect key="frame" x="233.33333333333334" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="9ML-Zc-HGK"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="0pm-ms-y31"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="MOF-ge-cJc"/>
+                                            <constraint firstAttribute="height" constant="80" id="rGw-wM-Hcp"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bz1-Qh-0nG">
+                                        <rect key="frame" x="0.0" y="315" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSw-dT-10n">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="NxY-ET-V24"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="E1K-df-2Dv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYf-iS-UKe">
+                                                <rect key="frame" x="116.66666666666666" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="TMD-0h-WVJ"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="xeI-z1-wTk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYV-4X-6SI">
+                                                <rect key="frame" x="233.33333333333334" y="0.0" width="116.66666666666666" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="CNK-fb-at7"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="5gK-M5-TFG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="r8a-Wa-kI8"/>
+                                            <constraint firstAttribute="width" constant="350" id="wUg-VU-njU"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-GJ-DpO">
+                                        <rect key="frame" x="0.0" y="420" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZH-JJ-5mn">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="ULd-LC-ZPk"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="vmc-Oa-4p1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxs-Db-4Gz">
+                                                <rect key="frame" x="70" y="0.0" width="70" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="cob-au-lAk"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="2Bc-jE-cfG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqc-QG-3UI">
+                                                <rect key="frame" x="140" y="0.0" width="70" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="−">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="S2Z-7R-xmx"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="een-NN-Bno"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQH-nC-xIS">
+                                                <rect key="frame" x="210" y="0.0" width="70" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="×">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="qNp-sA-rf7"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="im5-0r-Dec"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-sZ-x0M">
+                                                <rect key="frame" x="280" y="0.0" width="70" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="uiG-7c-Lw1"/>
+                                                    <action selector="tap:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="i5y-8Q-E2m"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="czY-8E-Zgg"/>
+                                            <constraint firstAttribute="height" constant="80" id="fyX-ao-96S"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="5bK-Ep-YEE"/>
+                                    <constraint firstAttribute="width" constant="350" id="z3k-ej-9Kj"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-EI-MV0">
+                                <rect key="frame" x="37" y="147" width="300" height="100"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="72"/>
+                                <color key="textColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tu4-U4-G1Z">
+                                <rect key="frame" x="309" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="right.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="9rz-ly-DCJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXX-PP-ITN">
+                                <rect key="frame" x="162" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="both.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="y4M-JA-dCH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZP4-gm-iGq">
+                                <rect key="frame" x="16" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="left.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="ShV-Ok-XVT" eventType="touchUpInside" id="AOx-SQ-rns"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="2zq-Kw-jae" firstAttribute="top" secondItem="QBm-EI-MV0" secondAttribute="bottom" constant="50" id="OZY-FC-RAV"/>
+                            <constraint firstAttribute="bottom" secondItem="2zq-Kw-jae" secondAttribute="bottom" constant="15" id="Srb-xp-kn8"/>
+                            <constraint firstItem="QBm-EI-MV0" firstAttribute="top" secondItem="3vR-jv-xSo" secondAttribute="top" constant="103" id="XOI-nX-LfL"/>
+                            <constraint firstItem="QBm-EI-MV0" firstAttribute="centerX" secondItem="2zq-Kw-jae" secondAttribute="centerX" id="d0s-Sa-mpy"/>
+                            <constraint firstItem="QBm-EI-MV0" firstAttribute="leading" secondItem="3vR-jv-xSo" secondAttribute="leading" constant="37" id="plz-tk-prE"/>
+                            <constraint firstItem="2zq-Kw-jae" firstAttribute="centerX" secondItem="RpP-in-8jG" secondAttribute="centerX" id="tMq-Ic-Ega"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3vR-jv-xSo"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="QBm-EI-MV0" id="JVL-nh-tof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hkj-jC-MuP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eRT-2G-wwn">
+            <objects>
+                <viewController storyboardIdentifier="right" id="5LU-uA-Nta" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pf7-RB-ylj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-7y-r0Z">
+                                <rect key="frame" x="12" y="297" width="350" height="500"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RxH-uw-RxG">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMm-cU-L7H">
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="5Vi-ws-Yqh"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="wF6-ZY-1ni"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XF8-sj-5Qb">
+                                                <rect key="frame" x="262" y="0.0" width="88" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="V3V-mq-xff"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="776-m8-HlT"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="m95-3Q-TC7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Gst-ff-jxn"/>
+                                            <constraint firstAttribute="width" constant="350" id="HMN-bs-h2b"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-1x-Bld">
+                                        <rect key="frame" x="0.0" y="105" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-c2-SCd">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Wgl-SK-LZr"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="ycM-Cc-6oR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swD-kB-guC">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="lfU-OL-YUi"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Ct2-uI-bWT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpc-FG-edv">
+                                                <rect key="frame" x="175" y="0.0" width="87.666666666666686" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="HXl-R3-YOV"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Jbv-9w-254"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09u-8o-QvJ">
+                                                <rect key="frame" x="262.66666666666669" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="×">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="bbE-da-OlK"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="4iA-ci-9wh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="7Fh-6h-WAN"/>
+                                            <constraint firstAttribute="width" constant="350" id="yP5-7c-hfN"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vlT-LB-DSf">
+                                        <rect key="frame" x="0.0" y="210" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFC-fr-jYl">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="rxi-A6-UoB"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Vci-fi-Ygp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8c-fR-6ia">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="1U6-dj-lar"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="5Ff-p9-e5z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8B-yY-Aaa">
+                                                <rect key="frame" x="175" y="0.0" width="87.666666666666686" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="t2M-Qj-e8Q"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="utS-PX-xai"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0Y-UQ-Cn6">
+                                                <rect key="frame" x="262.66666666666669" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="−">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Md6-yO-hGA"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="a8Y-pj-EnY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="QHs-2i-bYl"/>
+                                            <constraint firstAttribute="width" constant="350" id="TM0-gD-mGy"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M2h-qQ-EH2">
+                                        <rect key="frame" x="0.0" y="315" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-tA-kPA">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="tRZ-hT-iEQ"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="eEK-rc-qwZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzE-DB-7Z1">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="59G-e6-ZsG"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="kzf-0T-3j1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpd-Mq-Jyq">
+                                                <rect key="frame" x="175" y="0.0" width="87.666666666666686" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="ix3-Vh-mj7"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="5Jk-NO-luG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQU-9e-Bdi">
+                                                <rect key="frame" x="262.66666666666669" y="0.0" width="87.333333333333314" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="7Rx-Sj-qOF"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="zo8-TK-ewl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="LEb-cV-FET"/>
+                                            <constraint firstAttribute="width" constant="350" id="hoT-db-7mp"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-EC-9CY">
+                                        <rect key="frame" x="0.0" y="420" width="350" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O14-Ae-5Ro">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="131" id="gFI-lO-Kic"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="0Ts-IL-6Iv"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Z7D-hW-Ri0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgP-zv-6SI">
+                                                <rect key="frame" x="131" y="0.0" width="132" height="80"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="oke-AB-H7w"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="SNl-uK-eYF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKr-vE-Xuc">
+                                                <rect key="frame" x="263" y="0.0" width="87" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.329999999999998" id="NIc-F2-BcB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flashButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="kTq-49-SIu"/>
+                                                    <action selector="tap:" destination="5LU-uA-Nta" eventType="touchUpInside" id="zFh-0h-R9P"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="G6a-Ub-9y0"/>
+                                            <constraint firstAttribute="width" constant="350" id="SVZ-T3-hnf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="9iL-xZ-Qn8"/>
+                                    <constraint firstAttribute="width" constant="350" id="y4Q-4S-Z5V"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SId-ke-FcN">
+                                <rect key="frame" x="37" y="147" width="300" height="100"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="72"/>
+                                <color key="textColor" red="1" green="0.99998790029999995" blue="0.99999219179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-NW-l5T">
+                                <rect key="frame" x="16" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="left.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="Q1Z-am-DaX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfO-Sz-Iqk">
+                                <rect key="frame" x="162" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="both.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="bJ8-Vc-asT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJz-W7-376">
+                                <rect key="frame" x="309" y="44" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="right.png"/>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="5LU-uA-Nta" eventType="touchUpInside" id="wkj-59-lKV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SId-ke-FcN" firstAttribute="top" secondItem="Lm7-6N-9TY" secondAttribute="top" constant="103" id="25o-As-QPj"/>
+                            <constraint firstItem="VLh-7y-r0Z" firstAttribute="top" secondItem="SId-ke-FcN" secondAttribute="bottom" constant="50" id="Gwb-yn-XQL"/>
+                            <constraint firstAttribute="bottom" secondItem="VLh-7y-r0Z" secondAttribute="bottom" constant="15" id="TEK-Eg-2H6"/>
+                            <constraint firstItem="SId-ke-FcN" firstAttribute="leading" secondItem="Lm7-6N-9TY" secondAttribute="leading" constant="37" id="lMG-Z1-NXn"/>
+                            <constraint firstItem="VLh-7y-r0Z" firstAttribute="centerX" secondItem="Pf7-RB-ylj" secondAttribute="centerX" id="phg-hk-yU1"/>
+                            <constraint firstItem="SId-ke-FcN" firstAttribute="centerX" secondItem="VLh-7y-r0Z" secondAttribute="centerX" id="wQI-mU-84L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lm7-6N-9TY"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="SId-ke-FcN" id="kpM-Tl-jmg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FT-sn-Jgb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="both.png" width="200" height="200"/>
+        <image name="left.png" width="200" height="200"/>
+        <image name="right.png" width="200" height="200"/>
+    </resources>
+</document>
